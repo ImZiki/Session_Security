@@ -12,16 +12,19 @@ public class Usuario {
     @Column(unique = true)
     private String nombre;
     private String password;
+    private String rol;
 
-    public Usuario(Long id, String nombre, String password) {
+    public Usuario(Long id, String nombre, String password, String rol) {
         this.id = id;
         this.nombre = nombre;
         this.password = password;
+        this.rol = rol;
     }
 
-    public Usuario(String nombre, String password) {
+    public Usuario(String nombre, String password, String rol) {
         this.nombre = nombre;
         this.password = password;
+        this.rol = rol;
     }
 
     public Usuario() {
@@ -49,5 +52,13 @@ public class Usuario {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 }

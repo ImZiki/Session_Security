@@ -29,6 +29,7 @@ public class UsuarioController {
         // 1º Asegurarnos que userLogin no viene null
         if(userLogin == null || userLogin.getNombre() == null || userLogin.getPassword() == null) {
             // Lanzamos una excepcion
+            throw new RuntimeException("DATOS INCORRECTOS");
         }
 
         // 2º Comprobar usuario y contraseña en el service y obtener token
@@ -44,10 +45,21 @@ public class UsuarioController {
 
     // INSERT
     @PostMapping("/")
-    public ResponseEntity<UsuarioInsertDTO> insert(
+    public ResponseEntity<UsuarioDTO> insert(
             @RequestBody UsuarioInsertDTO nuevoUser
     ) {
-        return null;
+
+        // Comprobación mínima en el controller
+        if(nuevoUser == null) {
+            // Lanzamos excepcion
+        }
+
+        // Llamamos al service para realizar la inserción
+        UsuarioDTO usuarioDTO = usuarioService.insert(nuevoUser);
+
+        return new ResponseEntity<>(usuarioDTO, HttpStatus.OK);
+
+
     }
 
 }

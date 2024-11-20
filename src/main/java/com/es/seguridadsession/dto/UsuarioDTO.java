@@ -5,12 +5,13 @@ public class UsuarioDTO {
     private String nombre;
     private String password;
 
-    public UsuarioDTO(String nombre, String password1, String password2) {
+    public UsuarioDTO(String nombre, String password) {
         this.nombre = nombre;
-        this.password = password1;
+        this.password = password;
     }
 
     public UsuarioDTO(){}
+
 
     public String getNombre() {
         return nombre;
