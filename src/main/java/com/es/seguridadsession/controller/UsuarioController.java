@@ -57,7 +57,7 @@ public class UsuarioController {
         // Llamamos al service para realizar la inserción
         UsuarioDTO usuarioDTO = usuarioService.insert(nuevoUser);
 
-        return new ResponseEntity<>(usuarioDTO, HttpStatus.OK);
+        return new ResponseEntity<>(usuarioDTO, HttpStatus.CREATED);
 
 
     }

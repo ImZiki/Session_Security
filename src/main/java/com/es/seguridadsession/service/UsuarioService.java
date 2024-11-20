@@ -33,7 +33,6 @@ public class UsuarioService {
         // Comprobar si user y pass son correctos -> obtener de la BDD el usuario
         String nombreUser = userLogin.getNombre();
         String passUser = userLogin.getPassword();
-        String passUserHashed = cipherUtils.hashPassword(passUser);
 
         Usuario user = usuarioRepository
                 .findByNombre(nombreUser)
